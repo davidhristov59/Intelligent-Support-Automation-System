@@ -1,8 +1,28 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intelligent-Support-Automation-System.Domain", "Intelligent-Support-Automation-System.Domain\Intelligent-Support-Automation-System.Domain.csproj", "{D27FF638-9C08-4836-B727-DFFC6686F9B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{E922B0F4-6A00-43A4-AC5F-18ADA600D91D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intelligent-Support-Automation-System.Service", "Intelligent-Support-Automation-System.Service\Intelligent-Support-Automation-System.Service.csproj", "{10539295-21A7-49E5-92B8-5B968E0E720D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D27FF638-9C08-4836-B727-DFFC6686F9B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D27FF638-9C08-4836-B727-DFFC6686F9B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D27FF638-9C08-4836-B727-DFFC6686F9B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D27FF638-9C08-4836-B727-DFFC6686F9B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10539295-21A7-49E5-92B8-5B968E0E720D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10539295-21A7-49E5-92B8-5B968E0E720D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10539295-21A7-49E5-92B8-5B968E0E720D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10539295-21A7-49E5-92B8-5B968E0E720D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D27FF638-9C08-4836-B727-DFFC6686F9B1} = {E922B0F4-6A00-43A4-AC5F-18ADA600D91D}
+		{10539295-21A7-49E5-92B8-5B968E0E720D} = {E922B0F4-6A00-43A4-AC5F-18ADA600D91D}
 	EndGlobalSection
 EndGlobal
