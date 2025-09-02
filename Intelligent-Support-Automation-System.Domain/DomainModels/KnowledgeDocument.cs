@@ -6,14 +6,5 @@ public class KnowledgeDocument : BaseEntity //Represents documents stored in Cog
     public string? Title { get; set; }
     public string? Content { get; set; }
     public string? Category { get; set; }
-    public DateTime CreatedAt { get; set; }
-
-    public KnowledgeDocument(string? questionId, string? title, string? content, string? category, DateTime createdAt)
-    {
-        QuestionId = questionId;
-        Title = string.Empty;
-        Content = string.Empty;
-        Category = string.Empty;
-        CreatedAt = DateTime.UtcNow;
-    }
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 }
