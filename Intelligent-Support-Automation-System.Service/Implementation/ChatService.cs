@@ -67,7 +67,7 @@ public class ChatService : IChatService
 
     public async Task<Response> GenerateResponseAsync(Question question)
     /*
-     * This method performs a multi-step process
+     * This method performs a multistep process
        1. Validates the question content 
        2. Searches the knowledge base for relevant documents using the question content
        3. Uses Azure OpenAI to generate a contextual response based on search results
@@ -125,5 +125,10 @@ public class ChatService : IChatService
         }
 
         return await _cosmosDbRepository.GetUserSessionsAsync(userId);
+    }
+
+    public async Task<ChatSession> GetSessionByIdAsync(string? sessionId)
+    {
+        return await _cosmosDbRepository.GetSessionByIdAsync(sessionId);
     }
 }
