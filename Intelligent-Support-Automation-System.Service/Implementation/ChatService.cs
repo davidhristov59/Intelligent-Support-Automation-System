@@ -19,6 +19,9 @@ public class ChatService : IChatService
     }
 
     public async Task<ChatSession> StartChatSessionAsync(string userId)
+    /*
+     *This method creates a new chat session and persists it to Cosmos DB where it is immediately available for use after creation.
+     */
     {
         var session = new ChatSession()
         {
@@ -35,6 +38,11 @@ public class ChatService : IChatService
     }
 
     public async Task<Question> AskQuestionAsync(Question question)
+    /*
+     * This method validates that the session exists, assigns a unique ID to the question,
+        and adds it to the session's questions collection, where it updates the session's last message and timestamp,
+        and persists the changes to Cosmos DB.
+     */
     {
         var session = await _cosmosDbRepository.GetSessionByIdAsync(question.SessionId);
         
@@ -58,6 +66,15 @@ public class ChatService : IChatService
     }
 
     public async Task<Response> GenerateResponseAsync(Question question)
+    /*
+     * This method performs a multi-step process
+       1. Validates the question content 
+       2. Searches the knowledge base for relevant documents using the question content
+       3. Uses Azure OpenAI to generate a contextual response based on search results
+       4. Creates a response object with unique ID and current timestamp
+       5. Adds the response to the session and persists changes to Cosmos DB
+       The method integrates search, AI generation, and data persistence in a single operation.
+     */
     {
         if (string.IsNullOrEmpty(question.Content))
         {
@@ -97,6 +114,10 @@ public class ChatService : IChatService
     }
 
     public async Task<List<ChatSession>> GetChatSessionsByUserIdAsync(string? userId)
+    /*
+     * This method provides safe retrieval of user chat sessions,
+     * otherwise queries Cosmos DB for all sessions belonging to the specified user.
+     */
     {
         if (string.IsNullOrEmpty(userId))
         {

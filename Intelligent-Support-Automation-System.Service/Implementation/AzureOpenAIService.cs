@@ -21,6 +21,11 @@ public class AzureOpenAIService
     }
 
     public async Task<string> GenerateResponseAsync(string userMessage, List<KnowledgeDocument> searchResults)
+    /*
+     * This method combines the user's question with relevant knowledge base content to generate 
+        contextually accurate responses. It configures the AI model with specific parameters 
+        and uses a system message to establish context and role, followed by the user's message.
+     */
     {
         //Set options for the chat completion
         var chatCompletionOptions = new ChatCompletionOptions()
