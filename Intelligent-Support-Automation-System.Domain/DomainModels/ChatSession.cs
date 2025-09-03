@@ -6,4 +6,5 @@ public class ChatSession : BaseEntity //Represents a chat session between a user
     public string? UserMessage { get; set; }
     public DateTime Timestamp { get; set; }
     public List<Question>? Questions { get; set; }
+    public List<Response>? Responses { get; set; }
 }
