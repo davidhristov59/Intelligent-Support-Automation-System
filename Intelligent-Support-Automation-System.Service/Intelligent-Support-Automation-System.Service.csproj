@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>Intelligent_Support_Automation_System.Service</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Intelligent-Support-Automation-System.Domain\Intelligent-Support-Automation-System.Domain.csproj" />
+      <ProjectReference Include="..\Intelligent-Support-Automation-System.Repository\Intelligent-Support-Automation-System.Repository.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Azure.AI.OpenAI" Version="2.1.0" />
+      <PackageReference Include="Azure.Search.Documents" Version="11.6.1" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,6 @@
+@Intelligent_Support_Automation_System.Web_HostAddress = http://localhost:5272
+
+GET {{Intelligent_Support_Automation_System.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -6,6 +6,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{E922
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intelligent-Support-Automation-System.Service", "Intelligent-Support-Automation-System.Service\Intelligent-Support-Automation-System.Service.csproj", "{10539295-21A7-49E5-92B8-5B968E0E720D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intelligent-Support-Automation-System.Web", "Intelligent-Support-Automation-System.Web\Intelligent-Support-Automation-System.Web.csproj", "{A252B5F8-23EF-4B45-AAA9-C882B06FD739}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intelligent-Support-Automation-System.Repository", "Intelligent-Support-Automation-System.Repository\Intelligent-Support-Automation-System.Repository.csproj", "{3F1A6617-A162-456B-8066-2244D11807EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,9 +24,19 @@ Global
 		{10539295-21A7-49E5-92B8-5B968E0E720D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10539295-21A7-49E5-92B8-5B968E0E720D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10539295-21A7-49E5-92B8-5B968E0E720D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A252B5F8-23EF-4B45-AAA9-C882B06FD739}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A252B5F8-23EF-4B45-AAA9-C882B06FD739}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A252B5F8-23EF-4B45-AAA9-C882B06FD739}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A252B5F8-23EF-4B45-AAA9-C882B06FD739}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F1A6617-A162-456B-8066-2244D11807EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F1A6617-A162-456B-8066-2244D11807EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F1A6617-A162-456B-8066-2244D11807EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F1A6617-A162-456B-8066-2244D11807EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D27FF638-9C08-4836-B727-DFFC6686F9B1} = {E922B0F4-6A00-43A4-AC5F-18ADA600D91D}
 		{10539295-21A7-49E5-92B8-5B968E0E720D} = {E922B0F4-6A00-43A4-AC5F-18ADA600D91D}
+		{A252B5F8-23EF-4B45-AAA9-C882B06FD739} = {E922B0F4-6A00-43A4-AC5F-18ADA600D91D}
+		{3F1A6617-A162-456B-8066-2244D11807EE} = {E922B0F4-6A00-43A4-AC5F-18ADA600D91D}
 	EndGlobalSection
 EndGlobal
