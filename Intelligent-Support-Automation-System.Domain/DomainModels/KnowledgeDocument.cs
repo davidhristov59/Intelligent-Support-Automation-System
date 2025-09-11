@@ -7,5 +7,4 @@ public class KnowledgeDocument : BaseEntity //Represents documents stored in Cog
     public string? Content { get; set; }
     public string? Category { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-    public string? Source { get; set; } //file name, URL, index field
 }
