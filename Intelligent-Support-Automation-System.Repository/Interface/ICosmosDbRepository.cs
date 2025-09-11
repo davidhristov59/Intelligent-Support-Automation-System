@@ -4,7 +4,7 @@ namespace Intelligent_Support_Automation_System.Repository.Interface;
 
 public interface ICosmosDbRepository
 {
-    Task<ChatSession> GetSessionByIdAsync(string sessionId);
+    Task<ChatSession> GetSessionByIdAsync(string sessionId, string userId);
     Task<List<ChatSession>> GetUserSessionsAsync(string userId);
     Task CreateSessionAsync(ChatSession session);
     Task SaveSessionAsync(ChatSession session);
