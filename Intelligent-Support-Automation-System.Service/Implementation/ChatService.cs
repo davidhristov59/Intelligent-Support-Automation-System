@@ -23,6 +23,11 @@ public class ChatService : IChatService
      *This method creates a new chat session and persists it to Cosmos DB where it is immediately available for use after creation.
      */
     {
+        if (string.IsNullOrEmpty(userId))
+        {
+            throw new ArgumentException("UserId cannot be null or empty", nameof(userId));
+        }
+
         var session = new ChatSession()
         {
             Id = Guid.NewGuid(),
@@ -33,7 +38,7 @@ public class ChatService : IChatService
             UserMessage = string.Empty
         };
 
-        await _cosmosDbRepository.SaveSessionAsync(session);
+        await _cosmosDbRepository.CreateSessionAsync(session);
         return session;
     }
 
@@ -44,7 +49,17 @@ public class ChatService : IChatService
         and persists the changes to Cosmos DB.
      */
     {
-        var session = await _cosmosDbRepository.GetSessionByIdAsync(question.SessionId);
+        if (question == null)
+        {
+            throw new ArgumentNullException(nameof(question));
+        }
+
+        if (string.IsNullOrEmpty(question.UserId))
+        {
+            throw new ArgumentException("Question must have a UserId", nameof(question));
+        }
+        
+        var session = await _cosmosDbRepository.GetSessionByIdAsync(question.SessionId, question.UserId);
         
         if (session == null)
         {
@@ -104,7 +119,14 @@ public class ChatService : IChatService
         };
 
         //Save the response into the session
-        var session = await _cosmosDbRepository.GetSessionByIdAsync(question.SessionId);
+        var session = await _cosmosDbRepository.GetSessionByIdAsync(question.SessionId, question.UserId);
+        
+        if (session == null)
+        {
+            throw new InvalidOperationException($"Chat session with ID {question.SessionId} not found for user {question.UserId}.");
+        }
+        
+        
         session.Responses ??= new List<Response>();
         session.Responses.Add(response);
 
@@ -127,8 +149,8 @@ public class ChatService : IChatService
         return await _cosmosDbRepository.GetUserSessionsAsync(userId);
     }
 
-    public async Task<ChatSession> GetSessionByIdAsync(string? sessionId)
+    public async Task<ChatSession> GetSessionByIdAsync(string? sessionId, string? userId)
     {
-        return await _cosmosDbRepository.GetSessionByIdAsync(sessionId);
+        return await _cosmosDbRepository.GetSessionByIdAsync(sessionId, userId);
     }
 }

@@ -11,5 +11,5 @@ public interface IChatService
     Task<Question> AskQuestionAsync(Question question);
     Task<Response> GenerateResponseAsync(Question question);
     Task<List<ChatSession>> GetChatSessionsByUserIdAsync(string userId);
-    Task<ChatSession> GetSessionByIdAsync(string sessionId);
+    Task<ChatSession> GetSessionByIdAsync(string sessionId, string userId);
 }
