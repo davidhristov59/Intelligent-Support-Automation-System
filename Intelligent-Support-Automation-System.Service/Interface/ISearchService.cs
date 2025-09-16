@@ -1,4 +1,5 @@
 using Intelligent_Support_Automation_System.Domain.DomainModels;
+using Intelligent_Support_Automation_System.Domain.DTOs;
 
 namespace Intelligent_Support_Automation_System.Service.Interface;
 
@@ -7,5 +8,5 @@ namespace Intelligent_Support_Automation_System.Service.Interface;
  */
 public interface ISearchService
 {
-    Task<List<KnowledgeDocument>> SearchKnowledgeBaseAsync(string query, int maxResults=5);
+    Task<List<KnowledgeDocument>> SearchKnowledgeBaseAsync(SearchRequestDTO requestDto);
 }

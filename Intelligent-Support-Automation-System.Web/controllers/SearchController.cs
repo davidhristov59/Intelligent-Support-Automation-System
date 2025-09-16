@@ -21,15 +21,17 @@ public class SearchController : ControllerBase
         if (string.IsNullOrWhiteSpace(request.Query))
             return BadRequest("Search query is required.");
 
-        var results = await _searchService.SearchKnowledgeBaseAsync(request.Query, request.MaxResults);
+        if (request.MaxResults <= 0)
+            request.MaxResults = 5;
+        
+        var results = await _searchService.SearchKnowledgeBaseAsync(request);
 
-        var dtoResults = results.Select(s => new SearchResultsDTO
+        var dtoResults = results.Select(s => new SearchResultsDTO()
         {
-            Id = s.Id.ToString(),
-            Title = s.Title,
-            Content = s.Content, 
-            Category = s.Category,
-            Source = s.Source,
+            Id = s.Id.ToString() ?? string.Empty,
+            Title = s.Title ?? string.Empty,
+            Content = s.Content ?? string.Empty,
+            Category = s.Category ?? string.Empty,
             CreatedAt = s.CreatedAt
         }).ToList();
 
